@@ -1,0 +1,5 @@
+*.o
+*.bin
+*.elf
+leeos_tools
+leeos/**/leeos

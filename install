@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -d leeos_tools ]; then
+	rm -rf leeos_tools
+fi
+
+mkdir leeos_tools
+
+# check host
+if [ -n "$(echo `uname` | grep "Cygwin" -i)" ]; then
+	tool=tools/leeos_tools_for_cygwin.tar.gz
+	cp tools/skyeye.exe /usr/local/bin
+else
+	tool=tools/leeos_tools_for_linux.tar.gz
+fi
+
+tar xzf $tool -C leeos_tools --strip-components=1
